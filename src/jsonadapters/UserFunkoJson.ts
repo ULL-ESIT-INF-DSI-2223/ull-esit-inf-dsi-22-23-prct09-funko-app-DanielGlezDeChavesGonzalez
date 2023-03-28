@@ -1,5 +1,4 @@
 import fs from "fs";
-import { UserCollection } from "../collections/UserCollection";
 import { User } from "../datatype/User";
 
 type UserFunkoSchema = {
@@ -14,18 +13,16 @@ type UserFunkoSchema = {
   precio: number;
 };
 
-export class UserFunkoJson extends UserCollection {
+export class UserFunkoJson extends User {
   private static file: string = "../../data/FunkoDB.json";
 
-  constructor() {
-    super();
-    
+  constructor(nombre: string) {
+    super(nombre);
   }
 
   public saveUser(username: string): void {}
 
-  public loadUser(username: string): void {
-  }
+  public loadUser(username: string): void {}
 
   public saveFunko(funko: UserFunkoSchema): void {}
 
