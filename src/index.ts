@@ -6,15 +6,12 @@ const folderPath = "./data";
 
 let folderNames: string[] = [];
 
-fs.readdir(folderPath, { withFileTypes: true }, (err, files) => {
+fs.readdir(folderPath, (err, files) => {
   if (err) {
     console.error(err);
     return;
   }
-
-  folderNames = files
-    .filter((file) => file.isDirectory())
-    .map((file) => file.name);
+  files.forEach((file) => {
+    console.log(file);
+  });
 });
-
-console.log(folderNames);
