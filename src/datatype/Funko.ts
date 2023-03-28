@@ -1,25 +1,38 @@
-import { Tipo } from "./Types";
-import { Genero } from "./Types";
+import { Genero, Tipos } from "./Tipos";
 
 export class Funko {
-  private static registro_id: number[] = [];
+  id: number;
+  name: string;
+  description: string;
+  Tipo: Tipos;
+  Genero: Genero;
+  Franquicia: string;
+  Numero_franquicia: number;
+  Exclusivo: boolean;
+  Caracteristicas_especiales: string;
+  Precio: number;
 
   constructor(
-    public id: number,
-    private nombre: string,
-    private tipo: Tipo,
-    private genero: Genero,
-    private descripcion: string,
-    private numero_franquicia: number,
-    private exclusivo: boolean,
-    private caracteristicacas_especiales: string,
-    private precio: number
+    id: number,
+    name: string,
+    description: string,
+    Tipo: Tipos,
+    Genero: Genero,
+    Franquicia: string,
+    Numero_franquicia: number,
+    Exclusivo: boolean,
+    Caracteristicas_especiales: string,
+    Precio: number
   ) {
     this.id = id;
-    this.nombre = nombre;
-  }
-
-  public getNombre(): string {
-    return this.nombre;
+    this.name = name;
+    this.description = description;
+    this.Tipo = Tipo;
+    this.Genero = Genero;
+    this.Franquicia = Franquicia;
+    this.Numero_franquicia = Numero_franquicia;
+    this.Exclusivo = Exclusivo;
+    this.Caracteristicas_especiales = Caracteristicas_especiales;
+    this.Precio = Precio;
   }
 }
