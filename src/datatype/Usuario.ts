@@ -11,7 +11,24 @@ export class Usuario {
     this.FunkoCollection = new Map<Number, Funko>();
   }
 
-  public cargarFunkos(ruta: string) {
-    
+  public cargarFunkos() {
+    const carpeta: string = "../data/" + this.nombre + "/";
+    const archivos: string[] = fs.readdirSync(carpeta);
+    archivos.forEach((archivo) => {
+      const ruta: string = path.join(carpeta, archivo);
+      const funko: Funko = JSON.parse(fs.readFileSync(ruta, "utf-8"));
+      this.FunkoCollection.set(funko.id, funko);
+    });
+  }
+
+  public getFunkos(): Map<Number, Funko> {
+    return this.FunkoCollection;
+  }
+
+  public guardarFunkos() {
+    this.FunkoCollection.forEach((funko) => {
+      const ruta: string = "../data/" + this.nombre + "/" + funko.id + ".json";
+      fs.writeFileSync(ruta, JSON.stringify(funko));
+    });
   }
 }
