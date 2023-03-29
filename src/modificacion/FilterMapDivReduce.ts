@@ -10,11 +10,11 @@ export class FilterMapDivReduce extends AlgorithmClass {
    * @param list lista de números
    * @returns devuelve la división de todos los elementos de la lista
    */
-  reduce(list : number[]): number {
+  reduce(): number {
     let result: number = 0;
 
     for (let i = 0; i < this.items.length; i++) {
-      result /= list[i];
+      result /= this.items[i];
     }
 
     return result;

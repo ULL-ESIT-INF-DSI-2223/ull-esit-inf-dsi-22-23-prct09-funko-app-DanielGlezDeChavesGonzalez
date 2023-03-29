@@ -64,7 +64,7 @@ export abstract class AlgorithmClass {
    * función que recorre el array y reduce los elementos a un único valor segun la clase que herede de esta
    * @param list array de números
    */
-  abstract reduce(list: number[]): number;
+  abstract reduce(): number;
 
   /**
    * función que ejecuta los métodos filter, map y reduce
@@ -75,7 +75,7 @@ export abstract class AlgorithmClass {
     this.afterFilter();
     this.items = this.map();
     this.afterMap();
-    let result: number = this.reduce(this.items);
+    let result: number = this.reduce();
     this.afterReduce();
     return result;
   }
