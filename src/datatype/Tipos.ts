@@ -8,9 +8,10 @@ export enum Tipos {
   "Pocket_Pops",
   "Mystery_Mini",
   "Pint_Size_Heroes",
+  "Indefinido",
 }
 
-export function asignarTipo(tipo: string) {
+export function asignarTipo(tipo: string): Tipos {
   switch (tipo) {
     case "Pop":
       return Tipos.Pop;
@@ -31,7 +32,7 @@ export function asignarTipo(tipo: string) {
     case "Pint_Size_Heroes":
       return Tipos.Pint_Size_Heroes;
     default:
-      return Tipos.Pop;
+      return Tipos.Indefinido;
   }
 }
 
@@ -44,9 +45,10 @@ export enum Genero {
   "Musica",
   "Anime",
   "Otros",
+  "Indefinido",
 }
 
-export function asignarGenero(genero: string) {
+export function asignarGenero(genero: string): Genero {
   switch (genero) {
     case "Animacion":
       return Genero.Animacion;
@@ -65,6 +67,6 @@ export function asignarGenero(genero: string) {
     case "Otros":
       return Genero.Otros;
     default:
-      return Genero.Animacion;
+      return Genero.Indefinido;
   }
 }
