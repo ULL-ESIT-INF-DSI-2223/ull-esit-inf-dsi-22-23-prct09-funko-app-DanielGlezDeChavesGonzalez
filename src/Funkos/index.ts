@@ -72,6 +72,10 @@ yargs(hideBin(process.argv))
       let genero: Genero;
       tipo = asignarTipo(argv.tipo);
       genero = asignarGenero(argv.genero);
+      if (tipo === Tipos.Error || genero === Genero.Error) {
+        console.log(chalk.red("Tipo o genero invalido"));
+        return;
+      }
       let added = app.addFunko(
         argv.user,
         argv.id,
@@ -188,12 +192,8 @@ yargs(hideBin(process.argv))
       let genero: Genero;
       tipo = asignarTipo(argv.tipo);
       genero = asignarGenero(argv.genero);
-      if (tipo == Tipos.Indefinido) {
-        console.log(chalk.red("Tipo invalido"));
-        return;
-      }
-      if (genero == Genero.Indefinido) {
-        console.log(chalk.red("Genero invalido"));
+      if (tipo === Tipos.Error || genero === Genero.Error) {
+        console.log(chalk.red("Tipo o genero invalido"));
         return;
       }
       let modified = app.modifyFunko(
@@ -252,7 +252,6 @@ yargs(hideBin(process.argv))
   .help().argv;
 
 yargs(hideBin(process.argv))
-
   .command(
     "remove",
     "Removes a funko given an ID",

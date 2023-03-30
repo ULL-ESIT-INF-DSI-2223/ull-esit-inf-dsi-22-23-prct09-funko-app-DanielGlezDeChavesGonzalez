@@ -43,21 +43,18 @@ export abstract class AlgorithmClass {
    * función que imprime por consola el array después de ejecutar el método filter
    */
   protected afterFilter() {
-    console.log("After Filter " + this.items);
   }
 
   /**
    * función que imprime por consola el array después de ejecutar el método map
    */
   protected afterMap() {
-    console.log("After Map " + this.items);
   }
 
   /**
    * función que imprime por consola el array después de ejecutar el método reduce
    */
   protected afterReduce() {
-    console.log("After Reduce " + this.items);
   }
 
   /**

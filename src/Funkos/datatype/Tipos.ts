@@ -1,14 +1,14 @@
 export enum Tipos {
-  "Pop",
-  "Pop_Rides",
-  "Vynil_Soda",
-  "Vynil_Gold",
-  "Dorbz",
-  "Chrome",
-  "Pocket_Pops",
-  "Mystery_Mini",
-  "Pint_Size_Heroes",
-  "Indefinido",
+  Pop = "Pop",
+  Pop_Rides = "Pop_Rides",
+  Vynil_Soda = "Vynil_Soda",
+  Vynil_Gold = "Vynil_Gold",
+  Dorbz = "Dorbz",
+  Chrome = "Chrome",
+  Pocket_Pops = "Pocket_Pops",
+  Mystery_Mini = "Mystery_Mini",
+  Pint_Size_Heroes = "Pint_Size_Heroes",
+  Error = "Error",
 }
 
 export function asignarTipo(tipo: string): Tipos {
@@ -32,20 +32,19 @@ export function asignarTipo(tipo: string): Tipos {
     case "Pint_Size_Heroes":
       return Tipos.Pint_Size_Heroes;
     default:
-      return Tipos.Indefinido;
+      return Tipos.Error;
   }
 }
 
 export enum Genero {
-  "Animacion",
-  "Peliculas_y_Tv",
-  "Videojuegos",
-  "Comics",
-  "Deportes",
-  "Musica",
-  "Anime",
-  "Otros",
-  "Indefinido",
+  Animacion = "Animacion",
+  Peliculas_y_Tv = "Peliculas_y_Tv",
+  Videojuegos = "Videojuegos",
+  Comics = "Comics",
+  Deportes = "Deportes",
+  Musica = "Musica",
+  Anime = "Anime",
+  Error = "Error",
 }
 
 export function asignarGenero(genero: string): Genero {
@@ -64,9 +63,7 @@ export function asignarGenero(genero: string): Genero {
       return Genero.Musica;
     case "Anime":
       return Genero.Anime;
-    case "Otros":
-      return Genero.Otros;
     default:
-      return Genero.Indefinido;
+      return Genero.Error;
   }
 }
